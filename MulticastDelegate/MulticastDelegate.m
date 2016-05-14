@@ -47,7 +47,9 @@
             return result;
         }
     }
-    
+   
+    // This causes a crash...
+    //        return [super methodSignatureForSelector:sel];
     return [[self class] instanceMethodSignatureForSelector:@selector(doNothing)];
 }
 
@@ -59,6 +61,9 @@
         if ([delegate respondsToSelector:sel]) {
             [invocation invokeWithTarget:delegate];
         }else{
+            
+            // This causes a crash...
+            //        [super forwardInvocation:invocation];
             [self doNothing];
         }
     }
