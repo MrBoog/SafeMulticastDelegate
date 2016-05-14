@@ -6,7 +6,7 @@ NSNotificationCenter 我们肯定都有使用过，通过发送广播，实现�
 
 对于一对多的消息发送，其实还有很多办法可以考虑。比如说，我们可以通过**NSProxy 实现消息转发**，将我们普通一对一的delegate模式，改为一对多。
 
-我自己写了个简单的[DEMO](https://github.com/MrBoog/SafeMulticastDelegate)方便查看
+所以我自己写了这个简单的DEMO
 
 在目前实现过程中，需要考虑的主要有下面三点：
 
@@ -21,4 +21,5 @@ NSNotificationCenter 我们肯定都有使用过，通过发送广播，实现�
 **3. 处理 @optional的协议方法 crash问题**
 
 协议不可能都是 @required 肯定还有 @optional，在转发中记得处理可能crash的情况。
+
 
